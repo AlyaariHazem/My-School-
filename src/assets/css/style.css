@@ -80,11 +80,11 @@ a {
 input,
 button,
 a {
-    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
     -o-transition: all .4s ease;
     -ms-transition: all .4s ease;
-    -webkit-transition: all .4s ease
+    transition: all .4s easee
 }
 
 input,
@@ -5720,7 +5720,7 @@ blockquote p {
 .contacts-header .navbar {
     border: 0;
     margin: 0;
-    min-height: auto
+    /* min-height: auto */
 }
 
 .contacts-header .user-info a {
@@ -7421,11 +7421,11 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
     }
 
     .mini-sidebar.expand-menu .sidebar {
-        width: 270px
+        width: 270px;
     }
 
     .mini-sidebar.expand-menu .sidebar .header-left {
-        width: 270px
+        width: 270px;
     }
 
     .mini-sidebar.expand-menu .sidebar .header-left span {
@@ -7458,11 +7458,11 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
     }
 
     .mini-sidebar.expand-menu .sidebar .noti-dot:before {
-        display: block
+        display: block;
     }
 
     .mini-sidebar.expand-menu .sidebar .noti-dot:after {
-        display: block
+        display: block;
     }
 
     .modal-open.mini-sidebar .sidebar {
@@ -7504,9 +7504,16 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
         margin-right: -11.4rem;
         /* left: 110px; */
     }
-    
+    .mini-sidebar.expand-menu .page-wrapper {
+        margin-right: 0rem;
+        /* left: 110px; */
+    }
     .mini-sidebar .header {
         right: 110px;
+    }
+    .mini-sidebar.expand-menu .header {
+        margin-right: 11.4rem;
+        
     }
 }
 

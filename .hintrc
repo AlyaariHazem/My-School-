@@ -17,9 +17,13 @@
         "ignore": [
           "user-select",
           "-moz-box-align",
-          "-moz-box-pack"
+          "-moz-box-pack",
+          "-webkit-overflow-scrolling",
+          "min-height: auto"
         ]
       }
-    ]
+    ],
+    "css-prefix-order": "off",
+    "typescript-config/consistent-casing": "off"
   }
 }
