@@ -1,0 +1,42 @@
+<div class="form">
+
+    <form class="form-inline" action="" dir="rtl" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+        <p dir="ltr">{{phone}} </p>
+        <mat-form-field appearance="outline" class="input2">
+            <mat-label>إدخل رقم الهاتف</mat-label>
+            <input matInput placeholder="الهاتف" #Email="ngModel" ngModel name="email" required minlength="5"
+                maxlength="22" email (ngModelChange)="onEmailChanged($event)" [ngModelOptions]="{updateOn:'blur'}">
+
+            @if (Email.errors?.['required']) {
+            <mat-error> يجب إدخل رقم الهاتف </mat-error>
+            }
+            @else if (Email.errors?.['minlength']) {
+            <mat-error>رقم الهاتف يجب أن يكون 9 أرقام</mat-error>
+            }
+        </mat-form-field>
+
+        <p>{{password}}</p>
+        <mat-form-field appearance="outline" class="input2">
+            <mat-label>كلمة السر</mat-label>
+            <input matInput placeholder="كلمة السر" ngModel name="password" required
+                (ngModelChange)="onPasswordChanged($event)" minlength="8" maxlength="22" #pass="ngModel"
+                [ngModelOptions]="{updateOn:'change'}">
+
+
+            @if (pass.errors?.['required']) {
+            <mat-error>كلمة السر مطلوبة</mat-error>
+            }
+            @else if (pass.errors?.['minlength']) {
+            <mat-error>يجب أن تكون كلمة السر اكبر من 6</mat-error>
+            }
+        </mat-form-field>
+        <br>
+        <button type="submit" class="btn btn-primary mb-2 buttonSend" type="submit"
+            >تسجيل دخول</button>
+            <button type="submit" class="btn btn-primary mb-2 buttonSend" type="submit" (click)="register()"
+            >طالب جديد</button>
+        <a href="#">هل نسيت كلمة السر؟</a>
+    </form>
+
+</div>
