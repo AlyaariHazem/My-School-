@@ -4,8 +4,8 @@ $(document).ready(function() {
     // Area Chart for New and Old Students
     var areaChartOptions = {
         series: [
-            { name: 'New Students', data: [31, 40, 28, 51, 42, 109, 100] },
-            { name: 'Old Students', data: [11, 32, 45, 32, 34, 52, 41] }
+            { name: 'الطلاب المستجدين', data: [31, 40, 28, 51, 42, 109, 100] },
+            { name: 'الطلاب غير المستجدين', data: [11, 32, 45, 32, 34, 52, 41] }
         ],
         chart: { height: 350, type: 'area' },
         dataLabels: { enabled: false },

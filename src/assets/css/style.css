@@ -375,7 +375,7 @@ div.dataTables_wrapper div.dataTables_paginate {
 }
 
 .modal-footer.text-left {
-    text-align: left
+    text-align: right
 }
 
 .modal-footer.text-center {
@@ -890,7 +890,7 @@ textarea.form-control {
     background: #fff;
     z-index: 99;
     top: 0;
-    right: 22rem;
+    /* right: 22rem; */
     width: 100%
 }
 
@@ -965,7 +965,8 @@ textarea.form-control {
 
 .user-menu {
     margin: 0;
-    position: relative;
+    position: absolute;
+    left: 8px;
     z-index: 99
 }
 
@@ -1333,6 +1334,7 @@ label {
     font-size: 13px;
     font-weight: 500;
     line-height: 40px;
+    left:73%;
     min-height: 40px;
     padding: 0 20px;
     text-transform: uppercase
@@ -1346,7 +1348,6 @@ label {
 .sidebar-menu li.menu-title a {
     color: #ff9b44;
     display: inline-block;
-    /* float: right; */
     padding: 0
 }
 
@@ -1368,7 +1369,7 @@ label {
 
 .sidebar-menu li.menu-title a.add-user-icon i {
     font-size: 14px;
-    margin-left: 0;
+    margin-right: 0;
     margin-right: 0
 }
 
@@ -1390,40 +1391,7 @@ label {
     text-decoration: underline
 }
 
-.mobile-user-menu {
-    color: #fff;
-    display: none;
-    font-size: 24px;
-    height: 60px;
-    line-height: 60px;
-    padding: 0 20px;
-    position: absolute;
-    right: 0;
-    text-align: right;
-    top: 0;
-    width: 60px;
-    z-index: 10
-}
 
-.mobile-user-menu>a {
-    color: #2fdf84;
-    padding: 0
-}
-
-.mobile-user-menu>a:hover {
-    color: #2fdf84
-}
-
-.mobile-user-menu>.dropdown-menu>a {
-    line-height: 23px
-}
-
-.profile-rightbar {
-    display: none !important;
-    color: #2fdf84;
-    font-size: 26px;
-    margin-left: 15px
-}
 
 .mobile_btn {
     display: none
@@ -1671,7 +1639,7 @@ label {
 .page-header .breadcrumb li+li:before {
     padding: 0 10px;
     color: #373d3f;
-    content: "\f101";
+    content: "\f100";
     font-family: 'font awesome 5 free';
     font-style: normal;
     font-weight: 900
@@ -1920,7 +1888,7 @@ label {
 }
 
 .profile-userbuttons .btn {
-    margin-right: 5px
+    margin-left: 5px
 }
 
 .profile-userbuttons .btn:last-child {
@@ -7509,17 +7477,17 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
         /* left: 110px; */
     }
     .mini-sidebar .header {
-        right: 110px;
+        margin-right: -11.4rem;
     }
     .mini-sidebar.expand-menu .header {
-        margin-right: 11.4rem;
+        margin-right: 0rem;
         
     }
 }
 
 @media only screen and (min-width:768px) {
     .modal-md {
-        width: 600px
+        width: 600px;
     }
 
     .nav-tabs.nav-justified.nav-tabs-top {
@@ -7626,6 +7594,7 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
     .dash-widget-info>span {
         font-size: 12px
     }
+    
 }
 
 @media only screen and (max-width:991.98px) {
@@ -7634,11 +7603,18 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
         left: 0;
         border-radius: 0
     }
+    .page-wrapper{
+        right: 10px;
+    }
+    .user-menu{
+     left: 3rem; 
+    }
 
     .mobile-logo {
         height: 60px;
         line-height: 54px;
-        margin-left: 60px
+        margin-right: 60px;
+        margin-right: -1rem;
     }
 
     #toggle_btn {
@@ -7646,7 +7622,7 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
     }
 
     .header {
-        left: 10px
+        right: 10px
     }
 
     .top-nav-search {
