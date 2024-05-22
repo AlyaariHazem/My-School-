@@ -1,1 +1,5 @@
-<app-login ngSkipHydration ></app-login>
+@if (!showOutlet) {
+<app-login ngSkipHydration></app-login>
+}@else {
+    <router-outlet></router-outlet>
+}

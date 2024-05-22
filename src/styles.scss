@@ -5,3 +5,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "ngx-toastr/toastr";
+
+.toast-container {
+    pointer-events: none;
+    position: fixed;
+    right: 1rem;
+    z-index: 999999;
+    top: 2rem;
+}

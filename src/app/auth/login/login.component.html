@@ -1,17 +1,17 @@
 <div class="form">
 
-    <form class="form-inline" action="" dir="rtl" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <form class="form-inline" action="" dir="rtl" #loginForm="ngForm">
 
         <p dir="ltr">{{phone}} </p>
         <mat-form-field appearance="outline" class="input2">
             <mat-label>إدخل رقم الهاتف</mat-label>
-            <input matInput placeholder="الهاتف" #Email="ngModel" ngModel name="email" required minlength="5"
-                maxlength="22" email (ngModelChange)="onEmailChanged($event)" [ngModelOptions]="{updateOn:'blur'}">
+            <input matInput placeholder="الهاتف" #phone="ngModel" ngModel name="phone" required minlength="2"
+                maxlength="22" phone [ngModelOptions]="{updateOn:'blur'}">
 
-            @if (Email.errors?.['required']) {
+            @if (phone.errors?.['required']) {
             <mat-error> يجب إدخل رقم الهاتف </mat-error>
             }
-            @else if (Email.errors?.['minlength']) {
+            @else if (phone.errors?.['minlength']) {
             <mat-error>رقم الهاتف يجب أن يكون 9 أرقام</mat-error>
             }
         </mat-form-field>
@@ -20,7 +20,7 @@
         <mat-form-field appearance="outline" class="input2">
             <mat-label>كلمة السر</mat-label>
             <input matInput placeholder="كلمة السر" ngModel name="password" required
-                (ngModelChange)="onPasswordChanged($event)" minlength="8" maxlength="22" #pass="ngModel"
+                minlength="8" maxlength="22" #pass="ngModel"
                 [ngModelOptions]="{updateOn:'change'}">
 
 
@@ -32,11 +32,10 @@
             }
         </mat-form-field>
         <br>
-        <button type="submit" class="btn btn-primary mb-2 buttonSend" type="submit"
+        <button type="submit" class="btn btn-success mb-2 buttonSend"  (click)="login(loginForm)"
             >تسجيل دخول</button>
-            <button type="submit" class="btn btn-primary mb-2 buttonSend" type="submit" (click)="register()"
+            <button type="submit" class="btn btn-success mb-2 buttonSend" mat-raised-button (click)="register()"
             >طالب جديد</button>
         <a href="#">هل نسيت كلمة السر؟</a>
     </form>
-
 </div>
