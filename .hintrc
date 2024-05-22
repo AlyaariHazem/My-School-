@@ -24,6 +24,7 @@
       }
     ],
     "css-prefix-order": "off",
-    "typescript-config/consistent-casing": "off"
+    "typescript-config/consistent-casing": "off",
+    "button-type": "off"
   }
 }

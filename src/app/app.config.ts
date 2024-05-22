@@ -4,8 +4,10 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { provideToastr } from 'ngx-toastr';
+import { provideAnimations } from '@angular/platform-browser/animations';
+// import { IntercepterService } from './core/services/intercepter.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),provideRouter(routes,withComponentInputBinding()),
@@ -13,11 +15,13 @@ export const appConfig: ApplicationConfig = {
      provideAnimationsAsync(),
     importProvidersFrom((HttpClientModule)),
     provideHttpClient(withFetch()),
+    provideAnimations(), // required animations providers
+   // Toastr providers
     provideToastr(
       {
-        timeOut: 10000,
-        positionClass: 'toast-bottom-left',
+        timeOut: 5000,
       }
     ), 
+    // {provide:HTTP_INTERCEPTORS,useClass:IntercepterService,multi:true}
   ]
 };
