@@ -19,6 +19,7 @@ export interface Students {
     country:string,
     section:string,
     city:string,
+    image:string,
     phone:number,
     isActive:boolean
 }
