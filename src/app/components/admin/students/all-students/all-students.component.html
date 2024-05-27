@@ -49,7 +49,7 @@
                                         <tr>
                                             <td>
                                                 <h2><a href="#" class="avatar text-white"><img
-                                                            src="assets/images/{{student.image}}" alt=""></a><a
+                                                            src="../../../../../assets/images/٢٠٢٢٠٧٠٩_١٠٠٧٣٨.jpg" alt=""></a><a
                                                         href="#">{{student.fname+' ' + student.Sname+' ' + student.Tname+' ' + student.Lname}}
                                                         <span></span></a></h2>
                                             </td>
@@ -59,7 +59,7 @@
                                             <td>{{student.phone}}</td>
                                             <td>{{student.PirthDate}}</td>
                                             <td class="text-right">
-                                                <button mat-raised-button class="btn btn-primary btn-sm mb-1" (click)="openDialog()">
+                                                <button mat-raised-button class="btn btn-primary btn-sm mb-1" (click)="openDialog(student)">
                                                     <i class="far fa-edit"></i></button>
                                 
                                                 <button (click)="deleteStudent(student)" class="btn btn-danger btn-sm mb-1">

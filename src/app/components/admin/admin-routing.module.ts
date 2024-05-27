@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { NavigateComponent } from './navigate/navigate.component';
@@ -8,21 +8,28 @@ import { AboutStudentComponent } from './students/about-student/about-student.co
 import { AddStudentComponent } from './students/add-student/add-student.component';
 import { EditStudentComponent } from './students/edit-student/edit-student.component';
 import { AllStudentsComponent } from './students/all-students/all-students.component';
+import { ClassComponent } from './class/class.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: NavigateComponent,
+    component: NavigateComponent, data: { breadcrumb: 'الرئيسية  / ' },
     children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'sidebar', component: PageHeaderComponent },
-      { path: 'all-students', component: AllStudentsComponent },
-      { path: 'about-students', component: AboutStudentComponent },
-      { path: 'add-student', component: AddStudentComponent },
-      { path: 'edit-student', component: EditStudentComponent },
+      { path: 'dashboard', component: DashboardComponent, data: { breadcrumb: '' } },
+      { path: 'sidebar', component: PageHeaderComponent , data: { breadcrumb: 'Sidebar' } },
+      { path: 'class', component: ClassComponent , data: { breadcrumb: 'class' } },
+      { path: 'students', data: { breadcrumb: 'الطلاب' }, children: [
+          { path: 'all-students', component: AllStudentsComponent, data: { breadcrumb: 'جميع الطلاب' } },
+          { path: 'about-students', component: AboutStudentComponent, data: { breadcrumb: 'عن الطلاب' } },
+          { path: 'add-student', component: AddStudentComponent, data: { breadcrumb: 'إضافة طالب' } },
+          { path: 'edit-student', component: EditStudentComponent, data: { breadcrumb: 'تعديل طالب' } },
+          { path: '', redirectTo: 'all-students', pathMatch: 'full' }
+        ]
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
-  }
+  },
+  { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({

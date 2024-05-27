@@ -4,8 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 
 import { StudentsServicesService } from '../../../../core/services/student.service';
 import { UploadImageService } from '../../../../core/services/upload-image.service';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DialogData } from '../all-students/all-students.component';
 
 @Component({
   selector: 'app-add-student',
@@ -77,8 +75,11 @@ export class AddStudentComponent {
       this.toastService.error('ادخل بيانات الطالب بالكامل');
     }
   }
+  fileImage!:File;
   validateImageFile(event: any) {
     const file = event.target.files[0];
+    const input=event.target as HTMLElement;
+    console.log('input',input);
     const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
   
     if (file) {

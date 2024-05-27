@@ -20,7 +20,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { CommonModule } from '@angular/common';
 import { NavigateComponent } from './navigate/navigate.component';
 import { RouterOutlet } from '@angular/router';
-import { AdminComponent } from './admin.component';
+import { ClassComponent } from './class/class.component';
 
 const components = [
   DashboardComponent,
@@ -35,13 +35,15 @@ const components = [
   ChartForStudentComponent,
   EditStudentComponent,
   TeachersComponent,
-  NavigateComponent
-  
+  NavigateComponent,
+  ClassComponent
+
 ];
 
 const modules = [
   FormsModule,
   CommonModule,
+  ReactiveFormsModule,
   MatFormFieldModule,
   MatInputModule,
   MatDialogTitle,
@@ -49,7 +51,8 @@ const modules = [
   MatDialogActions,
   MatDialogClose,
   ReactiveFormsModule,
-  RouterOutlet
+  RouterOutlet,
+  
 ];
 
 @NgModule({

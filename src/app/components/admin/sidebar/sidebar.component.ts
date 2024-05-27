@@ -24,7 +24,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class SidebarComponent {
   isSubmenuOpen: { [key: string]: boolean } = {
-    classesSubmenu: false,
+    sittings: false,
     teachersSubmenu: false,
     studentsSubmenu: false,
     guardianSubmenu: false,
@@ -34,6 +34,7 @@ export class SidebarComponent {
     mangmentSubmenu: false,
     employeesSubmenu: false,
     reportsSubmenu: false,
+    
     // Add other submenus here
   };
 

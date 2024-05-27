@@ -1513,12 +1513,14 @@ label {
 }
 
 .page-header .row {
+    background-color: #eceff6;
     align-items: center
 }
 
 .page-wrapper {
     right: 285px;
     margin-left: 280px;
+    background-color: #eceff6;
     padding-top: 70px;
     position: relative;
     -webkit-transition: all .4s ease;
@@ -1638,19 +1640,8 @@ label {
     margin-top: 80px
 }
 
-.page-header .breadcrumb li+li:before {
-    padding: 0 10px;
-    color: #373d3f;
-    content: "\f100";
-    font-family: 'font awesome 5 free';
-    font-style: normal;
-    font-weight: 900
-}
-
-.page-header .breadcrumb {
-    border-radius: 4.25rem !important;
-    font-size: 12px;
-    background: 0 0
+.page-header .breadcrumb li a:hover {
+    color:rgb(150, 230, 150);
 }
 
 .page-header h5 {
@@ -1658,18 +1649,8 @@ label {
     color: #333;
     font-size: 22px
 }
-
-.page-header .breadcrumb-item a {
-    color: #373d3f
-}
-
-.page-header .breadcrumb-item span {
-    color: #8944d7;
-    text-decoration: underline
-}
-
-.page-header .breadcrumb-item a i {
-    padding-right: 20px
+.lastInBreadcrub{
+    color:rgb(140, 135, 135);
 }
 
 .page-header a,
@@ -2755,6 +2736,7 @@ table.dataTable>thead .sorting_desc_disabled:after {
 
 .chat-main-wrapper {
     display: table;
+    background-color: #eceff6;
     height: 100%;
     table-layout: fixed;
     width: 100%

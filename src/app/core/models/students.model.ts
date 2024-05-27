@@ -19,7 +19,16 @@ export interface Students {
     country:string,
     section:string,
     city:string,
-    image:string,
     phone:number,
-    isActive:boolean
+    isActive:boolean,
+    discriptionJob:string,
+    typeJob:string,
+    parantJob:string,
+    parantType:string,
+    parantPhone:string,
+    ParantName:string,
+    ParnatContryNum:number,
+    image:string,
+    downloadURL:any
+
 }

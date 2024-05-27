@@ -19,7 +19,8 @@
           "-moz-box-align",
           "-moz-box-pack",
           "-webkit-overflow-scrolling",
-          "min-height: auto"
+          "min-height: auto",
+          "-webkit-text-size-adjust"
         ]
       }
     ],
