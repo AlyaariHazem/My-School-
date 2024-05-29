@@ -1,0 +1,96 @@
+<div id="Contact" class="tabcontent">
+    <label for="termName" class="termName">اسـم الصـف </label><br>
+    <select name="term" id="class" class="term" value="إختار الصـف">
+        <option value="أول">أول</option>
+        <option value="ثاني">ُثاني</option>
+        <option value="ثالث">ثالث</option>
+    </select>
+    <label for="className" class="className">اسـم الشعبة</label>
+    <input type="text" class="class" placeholder="إدخل اسم شعبة جديدة">
+    <input type="submit" class="btn btn-primary add" value="إضافة">
+    <table class="styled-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>رمز الشعبة</th>
+            <th>الصـف</th>
+            <th>إجمالي الطلاب</th>
+            <th>ملاحظة</th>
+            <th>الحالة</th>
+            <th>العملية</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>أ</td>
+            <td>الأول</td>
+            <td>50</td>
+            <td>ملاحظة</td>
+            <td>نشطة</td>
+            <td>
+                <div class="col text-left">
+                    <div class=" mt-sm-0 mt-2">
+                        <button class="btn btn-left" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i
+                                class="fas fa-ellipsis-h"></i></button>
+                        <div class="dropdown-menu dropdown-menu-left">
+                            <a class="dropdown-item" href="#">تعديل</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">حذف</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>ب</td>
+            <td>الأول</td>
+            <td>500</td>
+            <td>ملاحظة</td>
+            <td>نشطة</td>
+            <td>
+                <div class="col text-left">
+                    <div class=" mt-sm-0 mt-2">
+                        <button class="btn btn-left" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i
+                                class="fas fa-ellipsis-h"></i></button>
+                        <div class="dropdown-menu dropdown-menu-left">
+                            <a class="dropdown-item" href="#"><i class="bi bi-pencil-square IconEdit" ></i>تعديل</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i class="bi bi-trash IconDelete"></i>حذف</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>أ</td>
+            <td>الثاني</td>
+            <td>50</td>
+            <td>ملاحظة</td>
+            <td>نشطة</td>
+            <td>
+                <div class="col text-left">
+                    <div class=" mt-sm-0 mt-2">
+                        <button class="btn btn-left" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i
+                                class="fas fa-ellipsis-h"></i></button>
+                        <div class="dropdown-menu dropdown-menu-left">
+                            <a class="dropdown-item" href="#">تعديل</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">حذف</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            
+          </tr>
+          <!-- المزيد من الصفوف هنا -->
+        </tbody>
+      </table>
+</div>
