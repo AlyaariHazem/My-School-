@@ -52,6 +52,7 @@ const modules = [
   MatDialogClose,
   ReactiveFormsModule,
   RouterOutlet,
+  FormsModule, MatFormFieldModule, MatInputModule,
   
 ];
 

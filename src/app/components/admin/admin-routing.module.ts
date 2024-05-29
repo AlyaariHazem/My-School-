@@ -9,6 +9,7 @@ import { AddStudentComponent } from './students/add-student/add-student.componen
 import { EditStudentComponent } from './students/edit-student/edit-student.component';
 import { AllStudentsComponent } from './students/all-students/all-students.component';
 import { ClassComponent } from './class/class.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'all-students', pathMatch: 'full' }
         ]
       },
+      { path: 'teacher', component: TeachersComponent, data: { breadcrumb: 'الإستاذ' } },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },

@@ -24,8 +24,14 @@ button {
 .signupbtn {
     position: relative;
     left: 2%;
+    background-color: #2fdf84;
+    border:none;
     width: 10%;
     top:14%;
+}
+.signupbtn:hover{
+    border:none;
+    
 }
 
 /* Add padding to container elements */
@@ -63,7 +69,7 @@ hr {
     .cancelbtn,
     .signupbtn {
         width: 7%;
-        background-color: #605f5f;
+        background-color: #2fdf84;
     }
 }
 // the form *******************************************************************************

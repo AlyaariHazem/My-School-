@@ -14,8 +14,12 @@
 .addNewClass {
   position: absolute;
   left: 5%;
-  z-index: 2;
+  z-index: 1;
   top: 13rem;
+}
+.addNewClass button{
+  background-color: #2fdf84;
+  border:none;
 }
 
 .row1 {
@@ -59,11 +63,10 @@ select:focus {
 input[type=text],
 input[type=password],
 input[type=email] {
-  width: 100%;
+  // width: 50%;
   padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
   border: 1px solid #ccc;
+  display: inline-block;
   box-sizing: border-box;
 }
 
@@ -73,11 +76,7 @@ button:hover {
 }
 
 .container button {
-  width: 33%;
-}
-
-.cansel {
-  margin-right: 22%;
+  width: 16%;
 }
 
 /* Center the image and position the close button */
@@ -103,6 +102,7 @@ svg:hover {
 
 .container {
   padding: 16px;
+  margin-top: 1rem;
 }
 
 span.psw {
@@ -144,7 +144,7 @@ span.psw {
 /* The Close Button (x) */
 .close {
   position: absolute;
-  right: 25px;
+  right: 30px;
   top: 0;
   color: #000;
   font-size: 35px;
@@ -185,24 +185,49 @@ span.psw {
 
 .section1 {
   position: relative;
-  width: 50%;
 }
-
-.section2 {
+.NameYear{
+  width: 100%;
+}
+.year{
   position: relative;
-  width: 50%;
-  right: 50%;
-  top: -9.7rem;
+  width:47%;
+  margin-right:2%; 
+  margin-top:0.5rem;
 }
 
+.section1 .note{
+  width:96%;
+  margin-right: 2%;
+  margin-top:0.5rem;
+}
+.text{
+  margin-top:2rem;
+}
+.record{
+  position: absolute;
+  top:2rem;
+  background-color: #2fdf84;
+  left:2rem;
+  border:none;
+}
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
     display: block;
     float: none;
+  
   }
-
+  
   .cancelbtn {
     width: 100%;
   }
+}
+@media (max-width:900px){
+  .container button {
+     width: 29%;
+     left:1rem;
+     top:1rem;
+   }
+
 }

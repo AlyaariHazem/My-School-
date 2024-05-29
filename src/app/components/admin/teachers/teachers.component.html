@@ -1,1 +1,18 @@
-<p>teachers</p>
+<button [ngClass]="{'tablink': true, 'active': activeTab === 'Contact'}" (click)="openPage('Contact', $event.target)">الشعب</button>
+<button [ngClass]="{'tablink': true, 'active': activeTab === 'About'}" (click)="openPage('About', $event.target)">الصفوف</button>
+<button [ngClass]="{'tablink': true, 'active': activeTab === 'News'}" (click)="openPage('News', $event.target)" id="defaultOpen">المراحل</button>
+
+<div id="News" class="tabcontent">
+  <h3>News</h3>
+  <p>Some news this fine day!</p> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+</div>

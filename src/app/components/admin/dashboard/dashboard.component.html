@@ -539,9 +539,9 @@
                                                             <td>$20000</td>
                                                             <td><img class="imageGreade" src="assets/img/pdf.png" alt=""></td>
                                                             <td class="text-right">
-                                                                <button mat-raised-button class="btn btn-primary btn-sm mb-1" >
+                                                                <button (click)="openDialog(student)" mat-raised-button class="btn btn-primary btn-sm mb-1" >
                                                                     <i class="far fa-edit"></i></button>
-                                                                <button type="submit" data-toggle="modal"
+                                                                <button (click)="deleteStudent(student)" type="submit" data-toggle="modal"
                                                                     data-target="#delete_employee"
                                                                     class="btn btn-danger btn-sm mb-1">
                                                                     <i class="far fa-trash-alt"></i>

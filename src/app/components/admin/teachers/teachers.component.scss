@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
+  
+  .tablink {
+    color: black;
+    float: right;
+    border: none;
+    outline: none;
+    background-color: #eceff6;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 9%;
+  }
+  
+  .tablink:hover {
+    color: black;
+  }
+  
+  .tablink.active {
+    border-bottom: 2px solid orange;
+  }
+  
+  .tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  
+  

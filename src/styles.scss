@@ -15,3 +15,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     top: 2rem;
     text-align: right;
 }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&display=swap');
+/* Primary font styles */
+body, h1, h2, h3, span, td, a, button, th,li {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    
+  }
+  
+  /* Secondary font styles */
+  .dropdown-item, td,a,li,td,span,div,input,label,mat-label, .mat-error{
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    
+  }

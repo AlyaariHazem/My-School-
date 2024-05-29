@@ -13,7 +13,7 @@ import { ClassService } from '../../../core/services/class.service';
   styleUrl: './class.component.scss'
 })
 export class ClassComponent {
-  title = 'المستخدمون';
+  title = 'السنوات الدراسية';
   checkTOEdit = false;
   toastr = inject(ToastrService);
   formBuilder = inject(FormBuilder);

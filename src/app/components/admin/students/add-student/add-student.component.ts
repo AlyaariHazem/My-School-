@@ -63,11 +63,12 @@ export class AddStudentComponent {
   onSubmit(): void {
     if (this.form.valid) {
       const imageFile = this.form.get('image')?.value;
+      this.studentService.addStudent(this.form.value).subscribe(()=>{
+        console.log('you sent the form',this.form.value);
+        this.toastService.success('تم إضافة الطالب بنجاح');
+      });
+
       this.uplaodImae.uploadImage(imageFile).subscribe(()=>{
-        this.studentService.addStudent(this.form.value).subscribe(()=>{
-          console.log('you sent the form',this.form.value);
-          this.toastService.success('تم إضافة الطالب بنجاح');
-        });
       })
       
     } else {
