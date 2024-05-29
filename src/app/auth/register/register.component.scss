@@ -76,11 +76,12 @@ hr {
 /* The Close Button (x) */
 .close {
     position: absolute;
-    right: 35px;
-    top: 15px;
+    left: 10%;
+    top: 7rem;
     font-size: 40px;
     font-weight: bold;
-    color: #f1f1f1;
+    color: #ff0000;
+    z-index: 2;
 }
 
 .close:hover,
@@ -260,17 +261,17 @@ input:focus,select:focus {
     top: -2rem;
     left: -48%;
 }
-.input4-1{
+.input4-3{
     position: absolute;
     right: 10.5%;
     width: 13.5%;
 }
-.input4-2{
+.input4-1{
     position: absolute;
-    right: 34.7%;
+    right: 35%;
     width: 12%;
 }
-.input4-3{
+.input4-2{
     position: absolute;
     right: 24%;
     width: 11%;

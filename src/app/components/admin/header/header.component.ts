@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
+  toggle:boolean=false;
+  open(){
+  this.toggle=!this.toggle;
+  }
 }

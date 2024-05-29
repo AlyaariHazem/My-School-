@@ -399,7 +399,8 @@ div.dataTables_wrapper div.dataTables_paginate {
 }
 
 .btn {
-    border-radius: 5px
+    border-radius: 5px;
+    float: left;
 }
 
 .btn:focus {
@@ -967,7 +968,8 @@ textarea.form-control {
     margin: 0;
     position: absolute;
     left: 8px;
-    z-index: 99
+    z-index: 99;
+    margin-top:-3rem;
 }
 
 .user-menu.nav>li>a {
@@ -1430,7 +1432,7 @@ label {
     -o-transition: -o-transform .15s;
     transition: transform .15s;
     position: absolute;
-    right: 20px;
+    left: 20px;
     display: inline-block;
     font-family: 'font awesome 5 free';
     font-weight: 900;
@@ -1511,12 +1513,14 @@ label {
 }
 
 .page-header .row {
+    background-color: #eceff6;
     align-items: center
 }
 
 .page-wrapper {
     right: 285px;
     margin-left: 280px;
+    background-color: #eceff6;
     padding-top: 70px;
     position: relative;
     -webkit-transition: all .4s ease;
@@ -1636,19 +1640,8 @@ label {
     margin-top: 80px
 }
 
-.page-header .breadcrumb li+li:before {
-    padding: 0 10px;
-    color: #373d3f;
-    content: "\f100";
-    font-family: 'font awesome 5 free';
-    font-style: normal;
-    font-weight: 900
-}
-
-.page-header .breadcrumb {
-    border-radius: 4.25rem !important;
-    font-size: 12px;
-    background: 0 0
+.page-header .breadcrumb li a:hover {
+    color:rgb(150, 230, 150);
 }
 
 .page-header h5 {
@@ -1656,18 +1649,8 @@ label {
     color: #333;
     font-size: 22px
 }
-
-.page-header .breadcrumb-item a {
-    color: #373d3f
-}
-
-.page-header .breadcrumb-item span {
-    color: #8944d7;
-    text-decoration: underline
-}
-
-.page-header .breadcrumb-item a i {
-    padding-right: 20px
+.lastInBreadcrub{
+    color:rgb(140, 135, 135);
 }
 
 .page-header a,
@@ -2753,6 +2736,7 @@ table.dataTable>thead .sorting_desc_disabled:after {
 
 .chat-main-wrapper {
     display: table;
+    background-color: #eceff6;
     height: 100%;
     table-layout: fixed;
     width: 100%
@@ -3970,16 +3954,15 @@ html.menu-opened body {
 .notifications {
     padding: 0
 }
-
 .notifications .drop-scroll {
     height: 290px;
     width: 400px
 }
 
 .notifications.msg-noti .drop-scroll {
-    width: 310px
+    width: 310px;
+    left:11px;
 }
-
 .notifications .notification-heading {
     margin: 0;
     font-size: 14px;
@@ -4047,7 +4030,8 @@ html.menu-opened body {
 .user-menu.nav>li>a .badge {
     position: absolute;
     right: 3px;
-    top: 6px;
+    top: 1px;
+    margin-top:-1rem;
     font-weight: 700
 }
 
@@ -7366,7 +7350,7 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
 @media only screen and (min-width:991px) {
     #toggle_btn {
         color: #999;
-        float: left
+        float: right
     }
 
     .mini-sidebar .header-left .logo img {
@@ -7600,14 +7584,20 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
 @media only screen and (max-width:991.98px) {
     .sidebar {
         top: 0;
-        left: 0;
+        right: 0;
+        display: none;
         border-radius: 0
+    }
+    
+    .mobile-logo{
+        visibility: hidden;
     }
     .page-wrapper{
         right: 10px;
     }
     .user-menu{
      left: 3rem; 
+     top:2.8rem
     }
 
     .mobile-logo {
@@ -7706,7 +7696,7 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
     .mobile_btn {
         display: block
     }
-
+    
     .page-title-box {
         display: none
     }
@@ -7719,6 +7709,7 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
         transition: all .4s ease;
         z-index: 1041
     }
+
 
     .page-wrapper {
         margin-left: 0;
@@ -7734,7 +7725,7 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
         color: #2fdf84;
         font-size: 24px;
         height: 60px;
-        left: 0;
+        right: 0;
         line-height: 60px;
         padding: 0 20px;
         position: absolute;

@@ -1,8 +1,8 @@
+<!-- @if (!userIsAdmin) { -->
 <div class="form">
-
     <form class="form-inline" action="" dir="rtl" #loginForm="ngForm">
 
-        <p dir="ltr">{{phone}} </p>
+        <p dir="ltr"></p>
         <mat-form-field appearance="outline" class="input2">
             <mat-label>إدخل رقم الهاتف</mat-label>
             <input matInput placeholder="الهاتف" #phone="ngModel" ngModel name="phone" required minlength="2"
@@ -23,7 +23,6 @@
                 minlength="8" maxlength="22" #pass="ngModel"
                 [ngModelOptions]="{updateOn:'change'}">
 
-
             @if (pass.errors?.['required']) {
             <mat-error>كلمة السر مطلوبة</mat-error>
             }
@@ -39,3 +38,7 @@
         <a href="#">هل نسيت كلمة السر؟</a>
     </form>
 </div>
+<!-- }@else { -->
+ 
+    <!-- <app-dashboard ngSkipHydration></app-dashboard> -->
+<!-- } -->

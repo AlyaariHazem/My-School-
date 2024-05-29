@@ -19,12 +19,19 @@
           "-moz-box-align",
           "-moz-box-pack",
           "-webkit-overflow-scrolling",
-          "min-height: auto"
+          "min-height: auto",
+          "-webkit-text-size-adjust"
         ]
       }
     ],
     "css-prefix-order": "off",
     "typescript-config/consistent-casing": "off",
-    "button-type": "off"
+    "button-type": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ]
   }
 }

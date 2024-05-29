@@ -34,7 +34,7 @@ export class LoginComponent {
       console.log('the user is ', loginform);
       this.authService.signIn(data.phone, data.password).subscribe(() => {
         this.toaster.success('تم تسجيل الدخول');
-        this.authService.router.navigateByUrl('admin',{ skipLocationChange: true });
+        this.authService.router.navigateByUrl('admin');
       });
     } else {
       this.toaster.error('يجب أن تكون البيانات صحيحة');

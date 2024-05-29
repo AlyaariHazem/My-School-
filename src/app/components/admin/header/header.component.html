@@ -1,10 +1,10 @@
 <div class="header-outer" dir="rtl">
     <div class="header">
-        <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fas fa-bars"
-                aria-hidden="true"></i></a>
-        <a id="toggle_btn" class="float-right" href="javascript:void(0);">
-            <img src="assets/img/sidebar/icon-21.png" alt="">
-        </a>
+        <a id="mobile_btn" (click)="open()" class="mobile_btn float-left" href="#sidebar"><i class="fas fa-bars"></i></a>
+                <app-sidebar [sidebar]=toggle ></app-sidebar>
+                <a id="toggle_btn" class="float-right" href="javascript:void(0);">
+                    <img src="assets/img/sidebar/icon-21.png" alt="">
+                </a>
         <ul class="nav float-right">
             <li>
                 <div class="top-nav-search">

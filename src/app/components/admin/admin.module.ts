@@ -17,6 +17,14 @@ import { AddStudentComponent } from './students/add-student/add-student.componen
 import { EditStudentComponent } from './students/edit-student/edit-student.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { CommonModule } from '@angular/common';
+import { NavigateComponent } from './navigate/navigate.component';
+import { RouterOutlet } from '@angular/router';
+import { StudyYearComponent } from './sittings/study-year/study-year.component';
+import { StagesGradesComponent } from './sittings/stages-grades/stages-grades.component';
+import { SchoolInfoComponent } from './sittings/school-info/school-info.component';
+import { GradesComponent } from './sittings/stages-grades/grades/grades.component';
+import { DivisionComponent } from './sittings/stages-grades/division/division.component';
 
 const components = [
   DashboardComponent,
@@ -31,12 +39,18 @@ const components = [
   ChartForStudentComponent,
   EditStudentComponent,
   TeachersComponent,
-  
+  NavigateComponent,
+  StudyYearComponent,
+  StagesGradesComponent,
+  SchoolInfoComponent,
+  GradesComponent,
+  DivisionComponent
 ];
 
 const modules = [
   FormsModule,
-  // CommonModule,
+  CommonModule,
+  ReactiveFormsModule,
   MatFormFieldModule,
   MatInputModule,
   MatDialogTitle,
@@ -44,6 +58,9 @@ const modules = [
   MatDialogActions,
   MatDialogClose,
   ReactiveFormsModule,
+  RouterOutlet,
+  FormsModule, MatFormFieldModule, MatInputModule,
+  
 ];
 
 @NgModule({
@@ -56,4 +73,6 @@ const modules = [
     ...components,...modules
   ]
 })
-export class AdminModule { }
+export class AdminModule { 
+  
+}
