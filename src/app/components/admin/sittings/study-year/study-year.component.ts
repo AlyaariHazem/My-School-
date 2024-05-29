@@ -3,16 +3,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 
-import { Class } from '../../../core/models/class.model';
-import { ClassService } from '../../../core/services/class.service';
-
+import { Class } from '../../../../core/models/class.model';
+import { ClassService } from '../../../../core/services/class.service';
 @Component({
-  selector: 'app-class',
-  
-  templateUrl: './class.component.html',
-  styleUrl: './class.component.scss'
+  selector: 'app-study-year',
+  templateUrl: './study-year.component.html',
+  styleUrl: './study-year.component.scss'
 })
-export class ClassComponent {
+export class StudyYearComponent {
   title = 'السنوات الدراسية';
   checkTOEdit = false;
   toastr = inject(ToastrService);
@@ -96,4 +94,5 @@ export class ClassComponent {
       this.refreshClass();
     });
   }
+
 }

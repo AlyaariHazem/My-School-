@@ -26,6 +26,12 @@
     ],
     "css-prefix-order": "off",
     "typescript-config/consistent-casing": "off",
-    "button-type": "off"
+    "button-type": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ]
   }
 }

@@ -20,7 +20,11 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { CommonModule } from '@angular/common';
 import { NavigateComponent } from './navigate/navigate.component';
 import { RouterOutlet } from '@angular/router';
-import { ClassComponent } from './class/class.component';
+import { StudyYearComponent } from './sittings/study-year/study-year.component';
+import { StagesGradesComponent } from './sittings/stages-grades/stages-grades.component';
+import { SchoolInfoComponent } from './sittings/school-info/school-info.component';
+import { GradesComponent } from './sittings/stages-grades/grades/grades.component';
+import { DivisionComponent } from './sittings/stages-grades/division/division.component';
 
 const components = [
   DashboardComponent,
@@ -36,8 +40,11 @@ const components = [
   EditStudentComponent,
   TeachersComponent,
   NavigateComponent,
-  ClassComponent
-
+  StudyYearComponent,
+  StagesGradesComponent,
+  SchoolInfoComponent,
+  GradesComponent,
+  DivisionComponent
 ];
 
 const modules = [

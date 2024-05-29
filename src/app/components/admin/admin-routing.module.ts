@@ -8,8 +8,10 @@ import { AboutStudentComponent } from './students/about-student/about-student.co
 import { AddStudentComponent } from './students/add-student/add-student.component';
 import { EditStudentComponent } from './students/edit-student/edit-student.component';
 import { AllStudentsComponent } from './students/all-students/all-students.component';
-import { ClassComponent } from './class/class.component';
 import { TeachersComponent } from './teachers/teachers.component';
+import { StudyYearComponent } from './sittings/study-year/study-year.component';
+import { SchoolInfoComponent } from './sittings/school-info/school-info.component';
+import { StagesGradesComponent } from './sittings/stages-grades/stages-grades.component';
 
 const routes: Routes = [
   {
@@ -18,7 +20,6 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent, data: { breadcrumb: '' } },
       { path: 'sidebar', component: PageHeaderComponent , data: { breadcrumb: 'Sidebar' } },
-      { path: 'class', component: ClassComponent , data: { breadcrumb: 'class' } },
       { path: 'students', data: { breadcrumb: 'الطلاب' }, children: [
           { path: 'all-students', component: AllStudentsComponent, data: { breadcrumb: 'جميع الطلاب' } },
           { path: 'about-students', component: AboutStudentComponent, data: { breadcrumb: 'عن الطلاب' } },
@@ -27,6 +28,14 @@ const routes: Routes = [
           { path: '', redirectTo: 'all-students', pathMatch: 'full' }
         ]
       },
+      {
+        path:'sitting',data:{breadcrumb:'الإعدادات'},children:[
+          {path:'years',component:StudyYearComponent,data:{breadcrumb:'السنوات الدراسية'}},
+          {path:'schoolInfo',component:SchoolInfoComponent,data:{breadcrumb:'معلومات المدرية'}},
+          {path:'stages',component:StagesGradesComponent,data:{breadcrumb:'المراحل والفصول'}},
+        ]
+      }
+      ,
       { path: 'teacher', component: TeachersComponent, data: { breadcrumb: 'الإستاذ' } },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]

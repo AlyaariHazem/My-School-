@@ -53,29 +53,38 @@
                         <div class="section3">
                             <h2 style="margin-right: 22px;">الاسم باللغة العربية</h2>
                             <label for="fname" class="lab3-1">الاسم</label>
-                            @if (form.get('fname')?.hasError('required')) {
+                            @if (form.get('fname')?.invalid && (form.get('fname')?.dirty ||
+                            form.get('fname')?.touched)) {
+                                @if (form.get('fname')?.errors?.['required']) {
                             <div class="lab3-1" style="top: 5rem;color: red;">
                                 <div>الاسم مطلوب</div>
                             </div>
                             }
+                        }
                             <input type="text" id="fname" class="input3-1" formControlName="fname">
                             <label for="Sname" class="lab3-2">الأب</label>
-                            @if (form.get('Sname')?.hasError('required')) {
+                            @if (form.get('Sname')?.invalid && (form.get('Sname')?.dirty ||
+                            form.get('Sname')?.touched)) {
+                                @if (form.get('Sname')?.errors?.['required']) {
                             <div class="lab3-2" style="top: 5rem;color: red;">
                                 <div>الاسم الأب مطلوب</div>
                             </div>
                             }
+                        }
                             <input type="text" id="Sname" class="input3-2" formControlName="Sname">
                             <label for="Tname" class="lab3-3">الجد</label>
 
                             <input type="text" id="Tname" class="input3-3" formControlName="Tname">
                             <label for="Lname" class="lab3-4">العائلة</label>
                             <input type="text" id="Lname" class="input3-4" formControlName="Lname">
-                            @if (form.get('Lname')?.hasError('required')) {
+                            @if (form.get('Lname')?.invalid && (form.get('Lname')?.dirty ||
+                            form.get('Lname')?.touched)) {
+                                @if (form.get('Lname')?.errors?.['required']) {
                             <div class="lab3-4" style="top: 5rem;color: red;">
                                 <div>الاسم العائلة مطلوب</div>
                             </div>
                             }
+                        }
                         </div>
                         <div class="section4">
                             <h2 style="margin-right: 33%;">Name By English </h2>
