@@ -97,6 +97,7 @@
     top: 0rem;
     width: 14%;
     left: 1rem;
+    border-radius: 32px;
     border: none;
     color: white;
     background-color: #2fdf84;
@@ -133,20 +134,20 @@
   
     .termName {
       position: absolute;
-      top: 2.4rem;
+      top: 7.4rem;
       right: 4%;
     }
   
     .term {
       position: absolute;
       right: 5%;
-      top: 4rem;
+      top: 9rem;
     }
   
     .class {
       position: absolute;
       right: 38%;
-      top: 4rem;
+      top: 9rem;
     }
   
   }

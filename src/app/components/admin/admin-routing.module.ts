@@ -42,7 +42,6 @@ const routes: Routes = [
   },
   { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' }
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

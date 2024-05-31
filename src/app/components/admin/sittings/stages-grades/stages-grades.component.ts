@@ -1,4 +1,8 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Stages } from '../../../../core/models/stages-grades.modul';
+import { StageService } from '../../../../core/services/stage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-stages-grades',
@@ -7,10 +11,6 @@ import { AfterViewInit, Component } from '@angular/core';
 })
 export class StagesGradesComponent implements AfterViewInit {
   activeTab: string = '';
-
-  ngOnInit(): void {
-    // Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-  }
 
   ngAfterViewInit(): void {
     // Called after the view has been initialized
@@ -42,5 +42,57 @@ export class StagesGradesComponent implements AfterViewInit {
 
     // Set the active tab
     this.activeTab = pageName;
+  }
+  //this for manage the stages
+  form: FormGroup;
+  stages:Stages[]=[];
+  constructor(
+    private stageService: StageService,
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService
+  ) {
+    this.form = this.formBuilder.group({
+      id: '',
+      stage: ['', Validators.required],
+      note: '',
+      state: true
+    });
+  }
+
+  ngOnInit() {
+    this.getStages();
+  }
+
+  getStages() {
+    this.stageService.getStages().subscribe(stages => {
+      this.stages = stages;
+    });
+  }
+
+  addStage() {
+    if (this.form.valid) {
+      this.stageService.addStage(this.form.value).subscribe(() => {
+        this.getStages(); // Refresh the list of stages
+        this.form.reset();
+        this.toastr.success('تم إضافة المرحلة بنجاح');
+      });
+    } else {
+      this.toastr.error('يجب أن تدخل بيانات');
+    }
+  }
+
+  editStage(stage: Stages) {
+    this.form.patchValue(stage);
+    this.stageService.editStage(stage).subscribe(() => {
+      this.toastr.success('Stage updated successfully');
+      this.getStages(); // Refresh the list of stages
+    });
+  }
+
+  deleteStage(stageId: string) {
+    this.stageService.deleteStage(stageId).subscribe(() => {
+      this.toastr.success('Stage deleted successfully');
+      this.getStages(); // Refresh the list of stages
+    });
   }
 }

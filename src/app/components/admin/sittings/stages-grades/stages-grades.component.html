@@ -1,25 +1,27 @@
 <div id="id01" class="">
-    <form class="modal-content" style="background-color:#ffffff!important;">
+    <div class="modal-content" style="background-color:#ffffff!important;">
         <div class="container">
-            <!-- <h2 class="school">تخصيص المدرسة</h2> -->
+            <h2 class="school">تخصيص المدرسة</h2>
             <button [ngClass]="{'tablink': true, 'active': activeTab === 'News'}"
-            (click)="openPage('News', $event.target)" id="defaultOpen"><span>المراحل</span></button>
+                (click)="openPage('News', $event.target)" id="defaultOpen"><span>المراحل</span></button>
             <button [ngClass]="{'tablink': true, 'active': activeTab === 'Class'}"
-            (click)="openPage('Class', $event.target)"><span>الصفوف</span></button>
+                (click)="openPage('Class', $event.target)"><span>الصفوف</span></button>
             <button [ngClass]="{'tablink': true, 'active': activeTab === 'Contact'}"
-            (click)="openPage('Contact', $event.target)"><span>الشعب</span></button>
+                (click)="openPage('Contact', $event.target)"><span>الشعب</span></button>
             <p class="line"></p>
-            
+
 
             <div id="News" class="tabcontent">
-                <label for="termName" class="termName">اسـم المرحـلة</label><br>
-                <input type="text" class="term" placeholder="المرحـلة">
-                <label for="className" class="className">ملاحظة</label>
-                <input type="text" class="class" placeholder="ملاحظة">
-                <input type="submit" class="btn btn-primary add" value="إضافة">
-                <table class="styled-table">
-                    <thead>
-                      <tr>
+                <form [formGroup]="form" >
+                    <label for="termName"  class="termName">اسـم المرحـلة</label><br>
+                    <input type="text" formControlName="stage"  class="term" placeholder="المرحـلة">
+                    <label for="className"  class="className">ملاحظة</label>
+                    <input type="text" formControlName="note" class="class" placeholder="ملاحظة">
+                    <input type="submit" (click)="addStage()" class="btn btn-primary add" value="إضافة">
+                </form>
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
                         <th>#</th>
                         <th>اسم المرحلة</th>
                         <th>صفوف</th>
@@ -27,10 +29,10 @@
                         <th>ملاحظة</th>
                         <th>الحالة</th>
                         <th>العملية</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
                         <td>1</td>
                         <td>الصف الأول</td>
                         <td>المرحلة الابتدائية</td>
@@ -51,9 +53,9 @@
                                 </div>
                             </div>
                         </td>
-                        
-                      </tr>
-                      <tr>
+
+                    </tr>
+                    <tr>
                         <td>2</td>
                         <td>الصف الثاني</td>
                         <td>المرحلة الابتدائية</td>
@@ -67,16 +69,17 @@
                                         aria-haspopup="true" aria-expanded="false"><i
                                             class="fas fa-ellipsis-h"></i></button>
                                     <div class="dropdown-menu dropdown-menu-left">
-                                        <a class="dropdown-item" href="#"><i class="bi bi-pencil-square IconEdit" ></i>تعديل</a>
+                                        <a class="dropdown-item" href="#"><i
+                                                class="bi bi-pencil-square IconEdit"></i>تعديل</a>
                                         <div role="separator" class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="#"><i class="bi bi-trash IconDelete"></i>حذف</a>
                                     </div>
                                 </div>
                             </div>
                         </td>
-                        
-                      </tr>
-                      <tr>
+
+                    </tr>
+                    <tr>
                         <td>3</td>
                         <td>الصف الثالث</td>
                         <td>المرحلة الابتدائية</td>
@@ -97,14 +100,14 @@
                                 </div>
                             </div>
                         </td>
-                        
-                      </tr>
-                      <!-- المزيد من الصفوف هنا -->
-                    </tbody>
-                  </table>
+
+                    </tr>
+                    <!-- المزيد من الصفوف هنا -->
+                </tbody>
+                </table>
             </div>
             <app-grades></app-grades>
             <app-division></app-division>
         </div>
-    </form>
+    </div>
 </div>
