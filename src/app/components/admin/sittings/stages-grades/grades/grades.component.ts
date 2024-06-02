@@ -13,6 +13,7 @@ import { DivisionService } from '../../../../../core/services/division.service';
   styleUrls: ['./grades.component.scss']
 })
 export class GradesComponent implements OnInit {
+  
   stageForm: FormGroup;
   stages: Array<Stages> = [];
   grades: Array<Grades> = [];

@@ -26,6 +26,7 @@ import { SchoolInfoComponent } from './sittings/school-info/school-info.componen
 import { GradesComponent } from './sittings/stages-grades/grades/grades.component';
 import { DivisionComponent } from './sittings/stages-grades/division/division.component';
 import { ActionComponent } from './action/action.component';
+import { StudentsComponent } from './students/students.component';
 
 const components = [
   DashboardComponent,
@@ -44,6 +45,7 @@ const components = [
   StudyYearComponent,
   StagesGradesComponent,
   SchoolInfoComponent,
+  StudentsComponent,
   GradesComponent,
   ActionComponent,
   DivisionComponent

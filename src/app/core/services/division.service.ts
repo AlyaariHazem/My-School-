@@ -41,12 +41,14 @@ export class DivisionService {
   }
 
   // Edit an existing division in Firebase
-  editdivision(division: Division): Observable<any> {
+  editDivision(division: Division): Observable<any> {
     const divisionId = division.id;
     const { id, ...divisionWithoutId } = division; // Destructure the division to exclude the id
+    console.log(`Editing division with id: ${divisionId}`); // Debug log
+    console.log(`Data being sent:`, divisionWithoutId); // Debug log
     return this.firebaseService.patchRequest(`${firebaseUrl}Division/${divisionId}.json`, divisionWithoutId, { 'content-type': 'application/json' });
   }
-
+  
   // Delete a division from Firebase
   deletedivision(divisionId: string): Observable<any> {
     return this.firebaseService.deleteRequest(`${firebaseUrl}Division/${divisionId}.json`, { 'content-type': 'application/json' });

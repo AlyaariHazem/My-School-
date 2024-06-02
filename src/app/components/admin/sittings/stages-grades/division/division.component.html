@@ -24,36 +24,28 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>أ</td>
-                <td>الأول</td>
-                <td>50</td>
-                <td>ملاحظة</td>
-                <td>نشطة</td>
-                <td>
-                    <div class="col text-left">
-                        <div class=" mt-sm-0 mt-2">
-                            <button class="btn btn-left" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
-                            <div class="dropdown-menu dropdown-menu-left">
-                                <a class="dropdown-item" href="#">تعديل</a>
-                                <div role="separator" class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">حذف</a>
-                            </div>
-                        </div>
-                    </div>
-                </td>
+            <tr *ngFor="let div of division; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ div.id }}</td>
+                <td>{{ getGradeName(div.grade) }}</td>
+                <td>{{ "لا يوجد حالياً" }}</td>
+                <td>{{ div.note }}</td>
+                <div class="dropdown" (click)="toggleStateDropdown(div)">
+                    @if (div.state) {
+                    <span class="dropdown-toggle" data-toggle="dropdown">نشط </span>
+                    }
+                    @else {
+                    <span class="dropdown-toggle" data-toggle="dropdown">خامل </span>
 
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>ب</td>
-                <td>الأول</td>
-                <td>500</td>
-                <td>ملاحظة</td>
-                <td>نشطة</td>
+                    }
+                    <div class="dropdown-menu">
+                        <span class="dropdown-item" (click)="changeState(div, true)">نشط</span>
+                        <span class="dropdown-item" (click)="changeState(div, false)">خامل</span>
+                    </div>
+                </div>
+
                 <td>
+                    <!-- this is for edit and delete  -->
                     <div class="col text-left">
                         <div class=" mt-sm-0 mt-2">
                             <button class="btn btn-left" type="button" data-toggle="dropdown" aria-haspopup="true"
@@ -66,31 +58,7 @@
                         </div>
                     </div>
                 </td>
-
             </tr>
-            <tr>
-                <td>3</td>
-                <td>أ</td>
-                <td>الثاني</td>
-                <td>50</td>
-                <td>ملاحظة</td>
-                <td>نشطة</td>
-                <td>
-                    <div class="col text-left">
-                        <div class=" mt-sm-0 mt-2">
-                            <button class="btn btn-left" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
-                            <div class="dropdown-menu dropdown-menu-left">
-                                <a class="dropdown-item" href="#">تعديل</a>
-                                <div role="separator" class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">حذف</a>
-                            </div>
-                        </div>
-                    </div>
-                </td>
-
-            </tr>
-            <!-- المزيد من الصفوف هنا -->
         </tbody>
     </table>
 </div>

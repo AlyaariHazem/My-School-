@@ -9,6 +9,7 @@ export interface Grades{
     id:string,
     grade:string,
     stage:string,
+    totalStudents:number,
     note:string,
     state:boolean
 }
