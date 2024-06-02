@@ -12,6 +12,8 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { StudyYearComponent } from './sittings/study-year/study-year.component';
 import { SchoolInfoComponent } from './sittings/school-info/school-info.component';
 import { StagesGradesComponent } from './sittings/stages-grades/stages-grades.component';
+import { ChartForStudentComponent } from './students/chart-for-student/chart-for-student.component';
+import { StudentsComponent } from './students/students.component';
 
 const routes: Routes = [
   {
@@ -21,10 +23,11 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent, data: { breadcrumb: '' } },
       { path: 'sidebar', component: PageHeaderComponent , data: { breadcrumb: 'Sidebar' } },
       { path: 'students', data: { breadcrumb: 'الطلاب' }, children: [
-          { path: 'all-students', component: AllStudentsComponent, data: { breadcrumb: 'جميع الطلاب' } },
+          { path: 'all-students', component: StudentsComponent, data: { breadcrumb: 'جميع الطلاب' } },
           { path: 'about-students', component: AboutStudentComponent, data: { breadcrumb: 'عن الطلاب' } },
           { path: 'add-student', component: AddStudentComponent, data: { breadcrumb: 'إضافة طالب' } },
-          { path: 'edit-student', component: EditStudentComponent, data: { breadcrumb: 'تعديل طالب' } },
+          { path: 'edit-student', component: AllStudentsComponent, data: { breadcrumb: 'تعديل طالب' } },
+          { path: 'chart-for-student', component: ChartForStudentComponent, data: { breadcrumb: ' طالب' } },
           { path: '', redirectTo: 'all-students', pathMatch: 'full' }
         ]
       },
@@ -42,7 +45,6 @@ const routes: Routes = [
   },
   { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' }
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

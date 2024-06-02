@@ -1,96 +1,106 @@
 <div id="Class" class="tabcontent">
-    <label for="termName" class="termName">اسـم المرحـلة</label><br>
-    <select name="term" id="term" class="term" value="إختار المرحلة">
-        <option value="الابتدائي">الإبتدائي</option>
-        <option value="ُالإعدادي">الإعدادي</option>
-        <option value="الثانوي">الثانوي</option>
-    </select>
-    <label for="className" class="className">اسـم الصف</label>
-    <input type="text" class="class" placeholder="إدخال اسم صـف جديد">
-    <input type="submit" class="btn btn-primary add" value="إضافة">
+    <form [formGroup]="stageForm">
+
+        <label for="stage" class="termName">اسـم المرحـلة</label><br>
+        <select name="stage" formControlName="stage" id="term" class="term" value="إختار المرحلة">
+            <option value="" disabled selected>إختار المرحلة</option>
+            @for (stage of stages; track $index) {
+            <option [value]="stage.id">{{stage.stage}}</option>
+            }
+        </select>
+        <label for="className" class="className">اسـم الصف</label>
+        <input type="text" formControlName="grade" class="class" placeholder="إدخال اسم صـف جديد">
+        <input type="submit" (click)="onSubmit()" class="btn btn-primary add" value="إضافة">
+    </form>
     <table class="styled-table">
         <thead>
-          <tr>
-            <th>#</th>
-            <th>اسم الصـف</th>
-            <th>المرحلة</th>
-            <th>شعب الصـف</th>
-            <th>ملاحظة</th>
-            <th>الحالة</th>
-            <th>العملية</th>
-          </tr>
+            <tr>
+                <th>#</th>
+                <th>اسم الصـف</th>
+                <th>المرحلة</th>
+                <th>شعب الصـف</th>
+                <th>ملاحظة</th>
+                <th>الحالة</th>
+                <th>العملية</th>
+            </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>الأول</td>
-            <td>المرحلة الابتدائية</td>
-            <td>2</td>
-            <td>ملاحظة</td>
-            <td>نشطة</td>
-            <td>
-                <div class="col text-left">
-                    <div class=" mt-sm-0 mt-2">
-                        <button class="btn btn-left" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"><i
-                                class="fas fa-ellipsis-h"></i></button>
-                        <div class="dropdown-menu dropdown-menu-left">
-                            <a class="dropdown-item" href="#">تعديل</a>
-                            <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">حذف</a>
+            @for (item of combinedData$ | async; track $index) {
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ item.grade }}</td>
+                <td>{{ item.stageName }}</td>
+                <td>
+                    <div class="col text-left">
+                        <div class="mt-sm-0 mt-2">
+                            <button class="btn btn-left division" type="button" (click)="toggleOuterDropdown(item)"
+                                aria-haspopup="true" aria-expanded="false">
+                                شُعب {{ item.divisions.length > 0 ? item.divisions.length : 0 }}<i
+                                    class="bi bi-caret-down-fill"></i>
+                            </button>
+                            @if (isOuterDropdownOpen(item)) {
+                            <div class="dropdown-menu nested-dropdown dropdown-menu-left">
+                                <table>
+                                    <tr>
+                                        <th>الشُعبة</th>
+                                        <th>إجمالي الطلاب</th>
+                                        <th>العملية</th>
+                                    </tr>
+                                    @for (division of item.divisions;track $index) {
+                                    <tr>
+                                        <td style="text-align: center;">{{ division.division }}</td>
+                                        <td><!-- Add total students logic here --> لا يوجد طلاب حالياً</td>
+                                        <td>
+                                            <div class="col text-left">
+                                                <div class="mt-sm-0 mt-2">
+                                                    <button class="btn btn-left" type="button"
+                                                        (click)="toggleInnerDropdown(item, division)">
+                                                        <i class="fas fa-ellipsis-h"></i>
+                                                    </button>
+                                                    @if (isInnerDropdownOpen(item, division)) {
+                                                    <div class="dropdown-menu nested-dropdown dropdown-menu-left">
+                                                        <a class="dropdown-item" href="#"><i
+                                                                class="bi bi-pencil-square IconEdit"></i>تعديل</a>
+                                                        <div role="separator" class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="#"><i class="bi bi-trash IconDelete"></i>حذف</a>
+                                                    </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    }
+                                    @if (item.divisions.length === 0) {
+                                    <tr>
+                                        <td colspan="3">لا يوجد شُعب يمكنك إضافة شُعب للفصل</td>
+                                    </tr>
+                                    }
+                                </table>
+                            </div>
+                            }
                         </div>
                     </div>
-                </div>
-            </td>
-            
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>الصف الثاني</td>
-            <td>المرحلة الابتدائية</td>
-            <td>ملاحظة</td>
-            <td>500</td>
-            <td>نشطة</td>
-            <td>
-                <div class="col text-left">
-                    <div class=" mt-sm-0 mt-2">
-                        <button class="btn btn-left" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"><i
-                                class="fas fa-ellipsis-h"></i></button>
-                        <div class="dropdown-menu dropdown-menu-left">
-                            <a class="dropdown-item" href="#"><i class="bi bi-pencil-square IconEdit" ></i>تعديل</a>
-                            <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="bi bi-trash IconDelete"></i>حذف</a>
+                    
+                </td>
+
+                <td>{{ item.note }}</td>
+                <td>{{ item.state ? 'Active' : 'Inactive' }}</td>
+                <td>
+                    <!-- this is for edit and delete  -->
+                    <div class="col text-left">
+                        <div class=" mt-sm-0 mt-2">
+                            <button class="btn btn-left" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
+                            <div class="dropdown-menu dropdown-menu-left">
+                                <a class="dropdown-item" href="#"><i class="bi bi-pencil-square IconEdit"></i>تعديل</a>
+                                <div role="separator" class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="bi bi-trash IconDelete"></i>حذف</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </td>
-            
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>الصف الثالث</td>
-            <td>المرحلة الابتدائية</td>
-            <td>ملاحظة</td>
-            <td>500</td>
-            <td>نشطة</td>
-            <td>
-                <div class="col text-left">
-                    <div class=" mt-sm-0 mt-2">
-                        <button class="btn btn-left" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"><i
-                                class="fas fa-ellipsis-h"></i></button>
-                        <div class="dropdown-menu dropdown-menu-left">
-                            <a class="dropdown-item" href="#">تعديل</a>
-                            <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">حذف</a>
-                        </div>
-                    </div>
-                </div>
-            </td>
-            
-          </tr>
-          <!-- المزيد من الصفوف هنا -->
+                </td>
+            </tr>
+            }
         </tbody>
-      </table>
+    </table>
 </div>

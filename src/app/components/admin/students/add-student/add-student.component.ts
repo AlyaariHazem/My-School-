@@ -1,4 +1,4 @@
-import { Component, Inject, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
@@ -13,7 +13,6 @@ import { UploadImageService } from '../../../../core/services/upload-image.servi
 export class AddStudentComponent {
   form: FormGroup;
   name = "info";
-
   private toastService = inject(ToastrService);
   private studentService=inject(StudentsServicesService);
   private uplaodImae=inject(UploadImageService);
