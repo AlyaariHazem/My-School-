@@ -6,7 +6,6 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { NavigateComponent } from './navigate/navigate.component';
 import { AboutStudentComponent } from './students/about-student/about-student.component';
 import { AddStudentComponent } from './students/add-student/add-student.component';
-import { EditStudentComponent } from './students/edit-student/edit-student.component';
 import { AllStudentsComponent } from './students/all-students/all-students.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { StudyYearComponent } from './sittings/study-year/study-year.component';

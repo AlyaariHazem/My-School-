@@ -27,6 +27,15 @@ import { GradesComponent } from './sittings/stages-grades/grades/grades.componen
 import { DivisionComponent } from './sittings/stages-grades/division/division.component';
 import { ActionComponent } from './action/action.component';
 import { StudentsComponent } from './students/students.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NewStudentComponent } from './students/new-student/new-student.component';
+import { PrimaryDataComponent } from './students/new-student/primary-data/primary-data.component';
+import { DocumentComponent } from './students/new-student/document/document.component';
+import { FeesComponent } from './students/new-student/fees/fees.component';
+import { GuardianComponent } from './students/new-student/guardian/guardian.component';
+import { OptionDataComponent } from './students/new-student/option-data/option-data.component';
+import { HeadComponent } from './students/new-student/head/head.component';
+
 
 const components = [
   DashboardComponent,
@@ -48,7 +57,14 @@ const components = [
   StudentsComponent,
   GradesComponent,
   ActionComponent,
-  DivisionComponent
+  DivisionComponent,
+  NewStudentComponent,
+  PrimaryDataComponent,
+  DocumentComponent,
+  FeesComponent,
+  GuardianComponent,
+  OptionDataComponent,
+  HeadComponent
 ];
 
 const modules = [
@@ -60,6 +76,7 @@ const modules = [
   MatDialogTitle,
   MatDialogContent,
   MatDialogActions,
+  MatDialogModule,
   MatDialogClose,
   ReactiveFormsModule,
   RouterOutlet,

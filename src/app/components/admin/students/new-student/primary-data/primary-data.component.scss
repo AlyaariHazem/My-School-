@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+}
+
+.modal-content {
+  border-radius: 1.5%;
+}
+
+.row2 input[type="text"]{
+  text-align: left;
+}
+.En,
+.inputAb {
+  width: 44% !important;
+}
+.hidden{
+  visibility: collapse;
+}
+h2 {
+  font-family: 'Changa', sans-serif;
+}
+
+label {
+  position: relative;
+}
+
+.container {
+  border-radius: 23px;
+  padding: 15px;
+}
+.row2{
+  text-align: left;
+}
+.row1-2 {
+  position: absolute;
+  right: 25%;
+}
+.row1-3 {
+  position: absolute;
+  right: 50%;
+}
+.row1-4 {
+  position: absolute;
+  right: 75%;
+}
+.row2-1 {
+  position: absolute;
+  left: 6%;
+  margin-top: -1.4rem;
+}
+.row2-2 {
+  position: absolute;
+  left: 30%;
+  margin-top: -1.4rem;
+}
+.row2-3 {
+  position: absolute;
+  left: 53%;
+  margin-top: -1.4rem;
+}
+.row2-4 {
+  position: absolute;
+  left: 82%;
+  margin-top: -1.4rem;
+}
+.row3-1 {
+  position: absolute;
+  right: 3%;
+  margin-top: -1.4rem;
+}
+.row3-2 {
+  position: absolute;
+  right: 26%;
+  margin-top: -1.4rem;
+}
+.row3-3 {
+  position: absolute;
+  right: 49%;
+  margin-top: -1.4rem;
+}
+.row3-4 {
+  position: absolute;
+  right: 72%;
+  margin-top: -1.4rem;
+}
+.LabEn {
+  position: absolute;
+  top: 22rem;
+  left: 11%;
+}
+
+.En {
+  position: relative;
+  right: 50%;
+  top: -2.7rem;
+}
+
+input,
+select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 33px;
+  width: 23%;
+  /* Adjusted width to fit four inputs per row */
+  background-color: white;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.row1 {
+  margin-top: -2rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 1100px) {
+  /* Custom styles for screen width <= 1100px */
+}
+
+@media (max-width: 900px) {
+
+  /* Custom styles for screen width <= 900px */
+  .LabEn {
+    top: 19rem;
+    left: 13%;
+  }
+}
+//this is Green
+@media (max-width: 600px) {
+  .row {
+    display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  }
+  .row1-3{
+    position: absolute;
+    right: 16px;
+    margin-top: 4rem;
+  }
+  .row1-2{
+    right: 46%;
+  }
+  .row1-4{
+    position: absolute;
+    right: 46%;
+    margin-top: 4rem;
+  }
+  .row3-2 {
+    right: 49%;
+  }
+  .row2-1 {
+    left: 12%;
+    margin-top: 1.6rem;
+  }
+  .row2-2 {
+    left: 55%;
+    margin-top: 1.6rem;
+  }
+  .row2-3 {
+    left: 12%;
+    margin-top: 5.3rem;
+  }
+  .row2-4 {
+    left: 56%;
+    margin-top: 5.2rem;
+  }
+  
+  .row3-3 {
+    right: 3%;
+    margin-top: 2rem;
+  }
+  .row3-4 {
+    right: 47%;
+    margin-top: 2rem;
+  }
+
+  .LabEn {
+    top: 21.3rem;
+    left: 18%;
+  }
+
+  input,
+  select {
+    width: 44%;
+  }
+  .hidden{
+    visibility: visible;
+  }
+  .appear{
+    visibility: collapse;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn {
+    position: relative;
+    top: -6.5rem;
+    width: 25%;
+    left: -1rem;
+    color: white;
+    background-color: #2fdf84;
+  }
+  .row {
+    flex-direction: column;
+  }
+  input,
+  select {
+    width: 100%;
+  }
+}
